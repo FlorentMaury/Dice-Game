@@ -11,6 +11,11 @@ main {
     display: flex;
 }
 
+img {
+    width: 190px;
+    height: 190px;
+}
+
         // LES CLASSES.
 
 .currentScoreBlock {
@@ -59,6 +64,7 @@ main {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+
 }
 
 #diceColumn {
@@ -80,9 +86,10 @@ main {
 #options {
     text-align: center;
 }
-#dice {
-    height: 150px;
-    background: white;
-    width: 150px;
-    border-radius: 5px;
+
+#newGame:hover,
+#rollDice:hover,
+#hold:hover {
+    scale: 1.1;
+    transition: all 0.2s;
 }

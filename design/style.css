@@ -10,6 +10,11 @@ main {
   display: flex;
 }
 
+img {
+  width: 190px;
+  height: 190px;
+}
+
 .currentScoreBlock {
   padding: 10px 60px;
   padding-bottom: 0;
@@ -73,11 +78,11 @@ main {
   text-align: center;
 }
 
-#dice {
-  height: 150px;
-  background: white;
-  width: 150px;
-  border-radius: 5px;
+#newGame:hover,
+#rollDice:hover,
+#hold:hover {
+  scale: 1.1;
+  transition: all 0.2s;
 }
 
 /*# sourceMappingURL=style.css.map */
