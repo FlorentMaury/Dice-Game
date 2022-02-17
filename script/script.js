@@ -54,7 +54,8 @@ function newRound() {
     playerTwoGlobalScore.textContent  = 0;
     PlayerOneCurrentScore.textContent = 0;
     PlayerTwoCurrentScore.textContent = 0;
-    last = 0;
+    last   = 0;
+    global = 0;
 }
 
     // AJOUT DES ÉVÈNEMENTS ET ÉCOUTEURS.
