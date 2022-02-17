@@ -3,7 +3,7 @@
 let playerOne, playerOneGlobalScore, playerOneCurrentScore,
     playerTwo, playerTwoGlobalScore, playerTwoCurrentScore,
     newGame, rollDice, hold, dice, randomNumber,
-    playerOneTurn, playerTwoTurn;
+    playerOneTurn;
 let last = 0;
 let global = 0;
 
@@ -67,12 +67,10 @@ function save() {
         playerOneGlobalScore.textContent = global;
         playerOneCurrentScore.textContent = 0;
         playerOneTurn = false;
-        playerTwoTurn = true;
     } else {
         playerTwoGlobalScore.textContent = global;
         playerTwoCurrentScore.textContent = 0;
         playerOneTurn = true;
-        playerTwoTurn = false;
     }
 
     if (global >= 100) {
@@ -90,7 +88,6 @@ newGame.addEventListener('click', function () {
     last   = 0;
     global = 0;
     playerOneTurn = true;
-    playerTwoTurn = false;
   });
 
 rollDice.addEventListener('click', init);
