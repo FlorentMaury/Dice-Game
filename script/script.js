@@ -97,4 +97,6 @@ newGame.addEventListener('click', function () {
 
 rollDice.addEventListener('click', init);
 
+dice.addEventListener('click', init);
+
 hold.addEventListener('click', save);
