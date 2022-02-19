@@ -250,8 +250,12 @@ button {
   #diceColumn {
     padding-left: 20px;
   }
+
+  #dice {
+    left: 30%;
+  }
 }
-@media all and (max-height: 751px) {
+@media all and (max-height: 751px) and (max-width: 500px) {
   #diceColumn {
     height: 3vh;
   }
@@ -259,8 +263,8 @@ button {
   #dice {
     position: absolute;
     bottom: 130%;
-    left: 38%;
-    right: 38%;
+    left: 35%;
+    right: 40%;
   }
 }
 

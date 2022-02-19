@@ -22,6 +22,7 @@ playerTwoCurrentScore = document.querySelector('#PlayerTwoCurrentScore');
 
 window.onload = () => {
     playerOneTurn = true;
+    playerOne.style.fontWeight = '300';
 }
 
 function diceNumber() {
@@ -56,8 +57,12 @@ function nextPlayer() {
 
     if (playerOneTurn) {
         playerOneTurn = false;
+        playerOne.style.fontWeight = '100';
+        playerTwo.style.fontWeight = '300';
     } else {
         playerOneTurn = true;
+        playerOne.style.fontWeight = '300';
+        playerTwo.style.fontWeight = '100';
     }
 }
 
@@ -67,11 +72,15 @@ function save() {
         playerOneGlobalScore.textContent = globalOne += last;
         playerOneCurrentScore.textContent = 0;
         playerOneTurn = false;
+        playerOne.style.fontWeight = '100';
+        playerTwo.style.fontWeight = '300';
         last = 0;
     } else {
         playerTwoGlobalScore.textContent = globalTwo += last;
         playerTwoCurrentScore.textContent = 0;
         playerOneTurn = true;
+        playerOne.style.fontWeight = '300';
+        playerTwo.style.fontWeight = '100';
         last = 0;
     }
 
