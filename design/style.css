@@ -1,4 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap");
+/* Copy this @keyframes block to your CSS*/
+@keyframes yourAnimation {
+  0.0% {
+    transform: rotate(180deg) scale(1);
+  }
+  100% {
+    transform: scale(2);
+  }
+}
+/* Add the animation: property to whichever element you want to animate */
+#elementToAnimate:hover {
+  animation: yourAnimation 2s ease 0s normal none;
+  color: #DC3545;
+}
+
 body {
   font-family: "Lato", sans-serif;
   font-weight: 300;

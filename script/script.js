@@ -48,7 +48,7 @@ function init() {
             playerTwoCurrentScore.textContent = 0;
         }
         last = 0;
-        nextPlayer()
+        nextPlayer();
     }
 
 }
@@ -71,21 +71,16 @@ function save() {
     if (playerOneTurn) {
         playerOneGlobalScore.textContent = globalOne += last;
         playerOneCurrentScore.textContent = 0;
-        playerOneTurn = false;
-        playerOne.style.fontWeight = '100';
-        playerTwo.style.fontWeight = '300';
+        nextPlayer();
         last = 0;
     } else {
         playerTwoGlobalScore.textContent = globalTwo += last;
         playerTwoCurrentScore.textContent = 0;
-        playerOneTurn = true;
-        playerOne.style.fontWeight = '300';
-        playerTwo.style.fontWeight = '100';
-        last = 0;
+        nextPlayer();
     }
 
     if (globalOne >= 100 || globalTwo >= 100) {
-        alert(`C'est gagné !`);
+        
     }
 
     last = 0;
@@ -102,7 +97,10 @@ newGame.addEventListener('click', function () {
     globalOne = 0;
     globalTwo = 0;
     playerOneTurn = true;
+    playerOne.style.fontWeight = '300';
+    playerTwo.style.fontWeight = '100';
   });
+
 
 rollDice.addEventListener('click', init);
 
