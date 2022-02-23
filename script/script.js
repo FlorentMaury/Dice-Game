@@ -56,13 +56,13 @@ function init() {
 function nextPlayer() {
 
     if (playerOneTurn) {
-        playerOneTurn = false;
         playerOne.classList.remove('currentPlayer');
         playerTwo.classList.add('currentPlayer');
+        playerOneTurn = false;
     } else {
-        playerOneTurn = true;
         playerOne.classList.add('currentPlayer');
         playerTwo.classList.remove('currentPlayer');
+        playerOneTurn = true;
     }
 }
 
@@ -82,15 +82,17 @@ function save() {
     if (globalOne >= 100 || globalTwo >= 100) {
         rollDice.disabled = true;
         hold.disabled = true;
-        dice.disabled = true;
+        dice.removeEventListener('click', init);
         if (globalOne >= 100) {
-            playerOne.textContent = 'Winner';
+            playerOne.textContent = 'WINNER';
             playerOne.classList.add('currentPlayer');
             playerTwo.classList.remove('currentPlayer');
+            document.querySelector('#playerTwoArea').style.opacity = .2;
         } else if (globalTwo >= 100) {
-            playerTwo.textContent = 'Winner';
+            playerTwo.textContent = 'WINNER';
             playerOne.classList.remove('currentPlayer');
             playerTwo.classList.add('currentPlayer');
+            document.querySelector('#playerOneArea').style.opacity = .2;
         }
     }
 
@@ -110,6 +112,14 @@ newGame.addEventListener('click', () => {
     playerOneTurn = true;
     playerOne.classList.add('currentPlayer');
     playerTwo.classList.remove('currentPlayer');
+    document.querySelector('#playerOneArea').style.opacity = 1;
+    document.querySelector('#playerTwoArea').style.opacity = 1;
+    playerOne.textContent = 'PLAYER 1';
+    playerTwo.textContent = 'PLAYER 2';
+
+    dice.addEventListener('click', init);
+    rollDice.disabled = false;
+    hold.disabled     = false;
   });
 
 playerOne.addEventListener('click', () => {
@@ -121,7 +131,6 @@ playerTwo.addEventListener('click', () => {
     nameTwo = prompt('Entrez un nom').toUpperCase();
     playerTwo.textContent = nameTwo;
 })
-
 
 rollDice.addEventListener('click', init);
 

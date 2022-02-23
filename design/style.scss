@@ -62,9 +62,10 @@ button {
 }
 
 .currentPlayer::after {
-    content: "\2022";
-    font-size: 80px;
-    color: #EB4D4D;
+    content     : "\2022";
+    font-size   : 80px;
+    position    : absolute;
+    color       : #EB4D4D;
     padding-left: 20px;
 }
 
