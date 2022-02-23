@@ -22,7 +22,7 @@ playerTwoCurrentScore = document.querySelector('#PlayerTwoCurrentScore');
 
 window.onload = () => {
     playerOneTurn = true;
-    playerOne.style.fontWeight = '300';
+    playerOne.classList.add('currentPlayer');
 }
 
 function diceNumber() {
@@ -57,12 +57,12 @@ function nextPlayer() {
 
     if (playerOneTurn) {
         playerOneTurn = false;
-        playerOne.style.fontWeight = '100';
-        playerTwo.style.fontWeight = '300';
+        playerOne.classList.remove('currentPlayer');
+        playerTwo.classList.add('currentPlayer');
     } else {
         playerOneTurn = true;
-        playerOne.style.fontWeight = '300';
-        playerTwo.style.fontWeight = '100';
+        playerOne.classList.add('currentPlayer');
+        playerTwo.classList.remove('currentPlayer');
     }
 }
 
@@ -80,7 +80,18 @@ function save() {
     }
 
     if (globalOne >= 100 || globalTwo >= 100) {
-        
+        rollDice.disabled = true;
+        hold.disabled = true;
+        dice.disabled = true;
+        if (globalOne >= 100) {
+            playerOne.textContent = 'Winner';
+            playerOne.classList.add('currentPlayer');
+            playerTwo.classList.remove('currentPlayer');
+        } else if (globalTwo >= 100) {
+            playerTwo.textContent = 'Winner';
+            playerOne.classList.remove('currentPlayer');
+            playerTwo.classList.add('currentPlayer');
+        }
     }
 
     last = 0;
@@ -97,8 +108,8 @@ newGame.addEventListener('click', function () {
     globalOne = 0;
     globalTwo = 0;
     playerOneTurn = true;
-    playerOne.style.fontWeight = '300';
-    playerTwo.style.fontWeight = '100';
+    playerOne.classList.add('currentPlayer');
+    playerTwo.classList.remove('currentPlayer');
   });
 
 

@@ -1,27 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
 
-/* Copy this @keyframes block to your CSS*/
-@keyframes yourAnimation {
-    0.0%{
-        transform: rotate(180deg) scale(1);
-    }
-    100%{
-        transform: scale(2);
-    }
-}
-
-
-/* Add the animation: property to whichever element you want to animate */
-#elementToAnimate:hover{
-    animation: yourAnimation 2s ease 0s normal none;
-    color: #DC3545;
-}
 
 body {
     font-family: 'Lato', sans-serif;
     font-weight: 300;
-    height: 100vh;
-    margin: auto 0;
+    height     : 100vh;
+    margin     : auto 0;
 }
 
 main {
@@ -29,38 +13,38 @@ main {
 }
 
 img {
-    width: 190px;
-    height: 190px;
+    width        : 190px;
+    height       : 190px;
     border-radius: 10px;
 }
 
 button {
-    background: transparent;
-    border: none;
+    background : transparent;
+    border     : none;
     font-weight: 300;
 }
 
         // LES CLASSES.
 
 .currentScoreBlock {
-    padding: 10px 60px;
+    padding       : 10px 60px;
     padding-bottom: 0;
-    display: flex;
+    display       : flex;
     flex-direction: column;
-    align-items: center;
-    border-radius: 3px;
+    align-items   : center;
+    border-radius : 3px;
 }
 
 .globalScoreArea {
-    display: flex;
+    display       : flex;
     flex-direction: column;
-    align-items: center;
+    align-items   : center;
     letter-spacing: .1em;
-    font-size: 8em;
-    font-weight: 100;
+    font-size     : 8em;
+    font-weight   : 100;
     
     h2 {
-        font-size: 4rem;
+        font-size  : 4rem;
         font-weight: 100;
     }
 }
@@ -73,6 +57,17 @@ button {
     font-size: 3em;
 }
 
+.currentPlayer {
+    font-weight: 300;
+}
+
+.currentPlayer::after {
+    content: "\2022";
+    font-size: 80px;
+    color: #EB4D4D;
+    padding-left: 20px;
+}
+
 
         // LES IDENTIFIANTS.
 
@@ -82,26 +77,26 @@ button {
 
 #playerOneArea,
 #playerTwoArea {
-    height: 100vh;
-    width: 50vw;
-    display: flex;
-    flex-direction: column;
+    height         : 100vh;
+    width          : 50vw;
+    display        : flex;
+    flex-direction : column;
     justify-content: space-around;
-    align-items: center;
+    align-items    : center;
 }
 
 #diceColumn {
-    background: transparent;
-    position: absolute;
-    height: 100vh;
-    right: 40%;
-    left: 40%;
-    bottom: 4%;
-    display: flex;
-    flex-direction: column;
+    background  : transparent;
+    position    : absolute;
+    height      : 100vh;
+    right       : 40%;
+    left        : 40%;
+    bottom      : 4%;
+    display     : flex;
+    font-size   : 1.8em;
+    flex-direction : column;
     justify-content: space-around;
-    align-items: center;
-    font-size: 1.8em;
+    align-items    : center;
 
     svg {
         margin-right: 15px;
@@ -109,13 +104,13 @@ button {
 }
 
 #options {
-    display: flex;
+    display       : flex;
     flex-direction: column;
 }
 
 #dice {
     border-radius: 10px;
-    transition: all .3s;
+    transition   : all .3s;
 }
 
 #hold {
@@ -124,10 +119,11 @@ button {
 
 #newGame:hover,
 #rollDice:hover,
-#hold:hover {
-    scale: 1.1;
-    font-weight: 400;
-    transition: all 0.3s;
+#hold:hover,
+#dice:hover {
+    scale       : 1.1;
+    font-weight : 400;
+    transition  : all 0.3s;
 }
 
 
@@ -137,7 +133,7 @@ button {
 @media all and (max-width: 1100px) {
 
     img {
-        width: 160px;
+        width : 160px;
         height: 160px;
     }
 
@@ -160,8 +156,8 @@ button {
     }
 
     #diceColumn {
-        right: 35%;
-        left: 35%;
+        right    : 35%;
+        left     : 35%;
         font-size: 1.4em;
     
         svg {
@@ -173,8 +169,8 @@ button {
 @media all and (max-width: 760px) {
 
     img {
-        width: 150px;
-        height: 150px;
+        width  : 150px;
+        height : 150px;
     }
 
     .globalScore {
@@ -193,16 +189,16 @@ button {
     }
 
     #diceColumn {
-        right: 30%;
-        left: 30%;
+        right : 30%;
+        left  : 30%;
     }
 }
 
 @media all and (max-width: 550px) {
 
     img {
-        width: 130px;
-        height: 130px;
+        width  : 130px;
+        height : 130px;
     }
 
     .globalScore {
@@ -222,23 +218,23 @@ button {
 
     #dice {
         position: absolute;
-        bottom: 225px;
-        left: 38%;
-        right: 38%;
+        bottom  : 225px;
+        left    : 38%;
+        right   : 38%;
     }
 
     #diceColumn {
-        width: 100vw;
-        height: 20vh;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 1.3em;
+        width  : 100vw;
+        height : 20vh;
+        right  : 0;
+        left   : 0;
+        bottom : 0;
         padding: 50px;
-        padding-bottom: 80px;
+        flex-direction  : row;
+        justify-content : space-between;
+        align-items     : center;
+        font-size       : 1.3em;
+        padding-bottom  : 80px;
 
         svg {
             margin-right: 8px;
@@ -247,13 +243,13 @@ button {
 
     #playerOneArea,
     #playerTwoArea {
-        height: 100vh;
-        width: 50vw;
-        display: flex;
-        flex-direction: column;
+        height         : 100vh;
+        width          : 50vw;
+        display        : flex;
+        flex-direction : column;
         justify-content: start;
-        align-items: center;
-        padding: 40px;
+        align-items    : center;
+        padding        : 40px;
     }
 
     #rollDice {
@@ -262,11 +258,11 @@ button {
 
     #hold {
         padding-bottom: 55px;
-        padding-right: 20px;
+        padding-right : 20px;
     }
 
     #dice:hover {
-        scale: 1.1;
+        scale     : 1.1;
         transition: all .3s;
     }
 }
@@ -301,8 +297,8 @@ button {
 
     #dice {
         position: absolute;
-        bottom: 130%;
-        left: 35%;
-        right: 40%;
+        bottom  : 130%;
+        left    : 35%;
+        right   : 40%;
     }
 }
