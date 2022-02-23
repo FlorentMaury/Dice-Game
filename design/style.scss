@@ -58,7 +58,7 @@ button {
 }
 
 .currentPlayer {
-    font-weight: 300;
+    font-weight: 300 !important;
 }
 
 .currentPlayer::after {
@@ -145,8 +145,14 @@ button {
     .globalScoreArea {
         font-size: .4rem;
         h2 {
-            font-size: 4rem;
+            font-size: 3rem;
         }
+    }
+
+    .currentPlayer::after {
+        font-size   : 80px;
+        position    : absolute;
+        padding-left: 0px;
     }
 
     #playerOneArea {
@@ -189,6 +195,7 @@ button {
         padding: 6px 45px;
     }
 
+
     #diceColumn {
         right : 30%;
         left  : 30%;
@@ -215,6 +222,13 @@ button {
 
     .currentScoreBlock {
         width: 90%;
+    }
+
+    .currentPlayer::after {
+        font-size   : 40px;
+        position    : absolute;
+        color       : #EB4D4D;
+        padding-left: 10px;
     }
 
     #dice {

@@ -99,6 +99,7 @@ function save() {
     last = 0;
 }
 
+
     // AJOUT DES ÉVÈNEMENTS ET ÉCOUTEURS.
 
 newGame.addEventListener('click', () => {
