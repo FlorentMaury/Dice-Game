@@ -26,7 +26,7 @@ window.onload = () => {
 }
 
 function diceNumber() {
-    randomNumber = Math.floor(Math.random() * 6) + 1;
+    randomNumber   = Math.floor(Math.random() * 6) + 1;
     dice.innerHTML = `<img src="images/${randomNumber}.png" alt="Image du dé">`;
 }
 
@@ -69,25 +69,27 @@ function nextPlayer() {
 function save() {
 
     if (playerOneTurn) {
-        playerOneGlobalScore.textContent = globalOne += last;
+        playerOneGlobalScore.textContent  = globalOne += last;
         playerOneCurrentScore.textContent = 0;
         nextPlayer();
         last = 0;
     } else {
-        playerTwoGlobalScore.textContent = globalTwo += last;
+        playerTwoGlobalScore.textContent  = globalTwo += last;
         playerTwoCurrentScore.textContent = 0;
         nextPlayer();
     }
 
     if (globalOne >= 100 || globalTwo >= 100) {
         rollDice.disabled = true;
-        hold.disabled = true;
+        hold.disabled     = true;
         dice.removeEventListener('click', init);
+        
         if (globalOne >= 100) {
             playerOne.textContent = 'WINNER';
             playerOne.classList.add('currentPlayer');
             playerTwo.classList.remove('currentPlayer');
             document.querySelector('#playerTwoArea').style.opacity = .2;
+
         } else if (globalTwo >= 100) {
             playerTwo.textContent = 'WINNER';
             playerOne.classList.remove('currentPlayer');
