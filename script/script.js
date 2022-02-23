@@ -1,7 +1,7 @@
     // DÉCLARATION DES VARIABLES.
 
-let playerOne, playerOneGlobalScore, playerOneCurrentScore, globalOne = 0,
-    playerTwo, playerTwoGlobalScore, playerTwoCurrentScore, globalTwo = 0,
+let playerOne, playerOneGlobalScore, playerOneCurrentScore, nameOne, globalOne = 0,
+    playerTwo, playerTwoGlobalScore, playerTwoCurrentScore, nameTwo, globalTwo = 0,
     newGame, rollDice, hold, dice, randomNumber, last = 0,
     playerOneTurn;
 
@@ -99,7 +99,7 @@ function save() {
 
     // AJOUT DES ÉVÈNEMENTS ET ÉCOUTEURS.
 
-newGame.addEventListener('click', function () {
+newGame.addEventListener('click', () => {
     playerOneGlobalScore.textContent  = 0;
     playerTwoGlobalScore.textContent  = 0;
     playerOneCurrentScore.textContent = 0;
@@ -111,6 +111,16 @@ newGame.addEventListener('click', function () {
     playerOne.classList.add('currentPlayer');
     playerTwo.classList.remove('currentPlayer');
   });
+
+playerOne.addEventListener('click', () => {
+    nameOne = prompt('Entrez un nom').toUpperCase();
+    playerOne.textContent = nameOne;
+  })
+
+playerTwo.addEventListener('click', () => {
+    nameTwo = prompt('Entrez un nom').toUpperCase();
+    playerTwo.textContent = nameTwo;
+})
 
 
 rollDice.addEventListener('click', init);
