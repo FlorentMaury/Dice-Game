@@ -129,7 +129,7 @@ playerOne.addEventListener('click', () => {
   })
 
 playerTwo.addEventListener('click', () => {
-    nameTwo = prompt('Entrez un nom').toUpperCase();
+    nameTwo = prompt('Entrez un nom :').toUpperCase();
     playerTwo.textContent = nameTwo;
 })
 
