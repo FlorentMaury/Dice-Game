@@ -20,12 +20,12 @@ playerTwoCurrentScore = document.querySelector('#PlayerTwoCurrentScore');
 
     // CRÉATION DES FONCTIONS.
 
-window.onload = () => {
+window.onload = () => {                                          // Le joueur numéro 1 est actif au chargement de la page. 
     playerOneTurn = true;
     playerOne.classList.add('currentPlayer');
 }
 
-function diceNumber() {
+function diceNumber() {                                         // La fonction sort un chiffre compris entre 1 et 6 inclus.
     randomNumber   = Math.floor(Math.random() * 6) + 1;
     dice.innerHTML = `<img src="images/${randomNumber}.png" alt="Image du dé">`;
 }
@@ -34,14 +34,14 @@ function init() {
 
     diceNumber();
 
-    if (randomNumber !== 1) {
+    if (randomNumber !== 1) {                                   // Le current score s'incrémente tant que le dé donne autre chose que un 1...
         last += randomNumber;
         if (playerOneTurn) {
             playerOneCurrentScore.textContent = last;
         } else {
             playerTwoCurrentScore.textContent = last;
         }
-    } else {
+    } else {                                                    // ... sinon le joueur actif change de position.
         if (playerOneTurn) {
             playerOneCurrentScore.textContent = 0;
         } else {
@@ -53,7 +53,7 @@ function init() {
 
 }
 
-function nextPlayer() {
+function nextPlayer() {                                         // La fonction modifie l'esthétique du joueur actif en attribuant et en retirant la classe .currentPlayer.
 
     if (playerOneTurn) {
         playerOne.classList.remove('currentPlayer');
@@ -66,7 +66,7 @@ function nextPlayer() {
     }
 }
 
-function save() {
+function save() {                                               // Les joueurs peuvent lorsque c'est leur tour transvaser leur 'currentScore' vers leur 'globalScore' et ainsi terminer son tour.
 
     if (playerOneTurn) {
         playerOneGlobalScore.textContent  = globalOne += last;
@@ -79,7 +79,7 @@ function save() {
         nextPlayer();
     }
 
-    if (globalOne >= 100 || globalTwo >= 100) {
+    if (globalOne >= 100 || globalTwo >= 100) {                  // Si le 'globalScore' d'un des joueurs atteint 100, le joueur à gagné.
         rollDice.disabled = true;
         hold.disabled     = true;
         dice.removeEventListener('click', init);
@@ -104,7 +104,7 @@ function save() {
 
     // AJOUT DES ÉVÈNEMENTS ET ÉCOUTEURS.
 
-newGame.addEventListener('click', () => {
+newGame.addEventListener('click', () => {                      // Initialise les variables et compteurs à zéro et redémarre une nouvelle partie.
     playerOneGlobalScore.textContent  = 0;
     playerTwoGlobalScore.textContent  = 0;
     playerOneCurrentScore.textContent = 0;
@@ -125,18 +125,18 @@ newGame.addEventListener('click', () => {
     hold.disabled     = false;
   });
 
-playerOne.addEventListener('click', () => {
+playerOne.addEventListener('click', () => {                // Permet de modifier le nom du joueur 1.
     nameOne = prompt('Entrez un nom').toUpperCase();
     playerOne.textContent = nameOne;
   })
 
-playerTwo.addEventListener('click', () => {
+playerTwo.addEventListener('click', () => {                // Permet de modifier le nom du joueur 2.
     nameTwo = prompt('Entrez un nom :').toUpperCase();
     playerTwo.textContent = nameTwo;
 })
 
-rollDice.addEventListener('click', init);
+rollDice.addEventListener('click', init);                  // Lance le dé.
 
-dice.addEventListener('click', init);
+dice.addEventListener('click', init);                      // Lance le dé également (seule option sur mobile notamment).
 
-hold.addEventListener('click', save);
+hold.addEventListener('click', save);                      // Transfère 'currentScore' vers 'globalScore'.
