@@ -42,6 +42,7 @@ function init() {
             playerTwoCurrentScore.textContent = last;
         }
     } else {                                                    // ... sinon le joueur actif change de position.
+        alert('Next player !);
         if (playerOneTurn) {
             playerOneCurrentScore.textContent = 0;
         } else {
@@ -54,8 +55,6 @@ function init() {
 }
 
 function nextPlayer() {                                         // La fonction modifie l'esthétique du joueur actif en attribuant et en retirant la classe .currentPlayer.
-
-    alert('Next player !);
           
     if (playerOneTurn) {
         playerOne.classList.remove('currentPlayer');
