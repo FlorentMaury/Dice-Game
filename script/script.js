@@ -55,6 +55,8 @@ function init() {
 
 function nextPlayer() {                                         // La fonction modifie l'esthétique du joueur actif en attribuant et en retirant la classe .currentPlayer.
 
+    alert('Next player !);
+          
     if (playerOneTurn) {
         playerOne.classList.remove('currentPlayer');
         playerTwo.classList.add('currentPlayer');
